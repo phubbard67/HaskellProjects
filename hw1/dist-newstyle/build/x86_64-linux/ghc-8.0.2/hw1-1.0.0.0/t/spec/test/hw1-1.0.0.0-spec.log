@@ -12,29 +12,10 @@ emptyIxs has the correct output
   +++ OK, passed 100 tests.
 won works correctly with two players
   +++ OK, passed 100 tests.
-aiMove never loses a two-player game FAILED [1]
+aiMove never loses a two-player game
+  +++ OK, passed 100 tests.
 
-Failures:
-
-  test/TicTacToeSpec.hs:87:3: 
-  1) aiMove never loses a two-player game
-       Falsified (after 1 test):
-         (C2,C2)
-         (C1,C0)
-         (C2,C0)
-         (C0,C0)
-
-  To rerun use: --match "/aiMove never loses a two-player game/"
-
-WARNING:
-  Your version of GHC is affected by https://ghc.haskell.org/trac/ghc/ticket/13285.
-  Source locations may not work as expected.
-
-  Please consider upgrading GHC!
-
-Randomized with seed 1519634058
-
-Finished in 0.0051 seconds
-7 examples, 1 failure
-Test suite spec: FAIL
+Finished in 36.6740 seconds
+7 examples, 0 failures
+Test suite spec: PASS
 Test suite logged to: /home/phubbard/Desktop/CS/Haskell/HaskellProjects/hw1/dist-newstyle/build/x86_64-linux/ghc-8.0.2/hw1-1.0.0.0/t/spec/test/hw1-1.0.0.0-spec.log

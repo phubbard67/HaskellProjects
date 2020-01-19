@@ -293,7 +293,7 @@ recurse into "moveScore", so "moveScore" doesn't have to have any calls to
 Replace the 0 below with your definition.
 
 > moveScore :: Board -> Player -> Index -> Int
-> moveScore b x i = 0
+> moveScore b x i = -(minimax (write i x b) (opponent x))
 
 *****************
 * END PROBLEM 4 *
