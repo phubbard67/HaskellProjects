@@ -8,45 +8,36 @@ downDiagIxs has the right contents
   +++ OK, passed 1 test.
 upDiagIxs has the right contents
   +++ OK, passed 1 test.
-emptyIxs has the correct output FAILED [1]
-won works correctly with two players FAILED [2]
-aiMove never loses a two-player game FAILED [3]
+emptyIxs has the correct output
+  +++ OK, passed 100 tests.
+won works correctly with two players FAILED [1]
+aiMove never loses a two-player game FAILED [2]
 
 Failures:
 
-  test/TicTacToeSpec.hs:81:3: 
-  1) emptyIxs has the correct output
-       Falsified (after 1 test):
-         . O X
-         . . .
-         . O O
-         
-
-  To rerun use: --match "/emptyIxs has the correct output/"
-
   test/TicTacToeSpec.hs:84:3: 
-  2) won works correctly with two players
+  1) won works correctly with two players
        uncaught exception: ErrorCall
        Prelude.undefined
        CallStack (from HasCallStack):
          error, called at libraries/base/GHC/Err.hs:79:14 in base:GHC.Err
-         undefined, called at src/TicTacToe.lhs:226:13 in hw1-1.0.0.0-inplace:TicTacToe
+         undefined, called at src/TicTacToe.lhs:230:13 in hw1-1.0.0.0-inplace:TicTacToe
        (after 1 test)
          O
-         . X .
-         . . .
-         X . O
+         X X .
+         X . X
+         . X O
          
 
   To rerun use: --match "/won works correctly with two players/"
 
   test/TicTacToeSpec.hs:87:3: 
-  3) aiMove never loses a two-player game
+  2) aiMove never loses a two-player game
        uncaught exception: ErrorCall
        Prelude.undefined
        CallStack (from HasCallStack):
          error, called at libraries/base/GHC/Err.hs:79:14 in base:GHC.Err
-         undefined, called at src/TicTacToe.lhs:226:13 in hw1-1.0.0.0-inplace:TicTacToe
+         undefined, called at src/TicTacToe.lhs:230:13 in hw1-1.0.0.0-inplace:TicTacToe
        (after 1 test)
 
   To rerun use: --match "/aiMove never loses a two-player game/"
@@ -57,9 +48,9 @@ WARNING:
 
   Please consider upgrading GHC!
 
-Randomized with seed 379625850
+Randomized with seed 669791872
 
 Finished in 0.0031 seconds
-7 examples, 3 failures
+7 examples, 2 failures
 Test suite spec: FAIL
-Test suite logged to: /home/phubbard/Desktop/Winter_2020/CS457/HaskellHomework/hw1/dist-newstyle/build/x86_64-linux/ghc-8.0.2/hw1-1.0.0.0/t/spec/test/hw1-1.0.0.0-spec.log
+Test suite logged to: /home/phubbard/Desktop/CS/Haskell/HaskellProjects/hw1/dist-newstyle/build/x86_64-linux/ghc-8.0.2/hw1-1.0.0.0/t/spec/test/hw1-1.0.0.0-spec.log

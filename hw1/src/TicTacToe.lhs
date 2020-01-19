@@ -187,11 +187,12 @@ As in problem 1, do not use the Coordinate constructors explicitly; use
 previously defined functions and lists to filter the list of all indices down
 to only those that contain an empty cell.
 
--- You will need to do something like this, but iterate over the entire
--- board and return a list of each index. This isn't going to be very intuitive. 
 
+> allInd :: [Index]
+> allInd = allIxs
 > emptyIxs :: Board -> [Index]
-> emptyIxs b | emptyAt b (C0, C0) = [(C0, C0)] 
+> emptyIxs b = filter (emptyAt b) allInd
+
 
 *****************
 * END PROBLEM 2 *
