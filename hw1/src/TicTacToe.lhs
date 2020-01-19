@@ -227,7 +227,7 @@ but for now you should treat them as having the above types. The function call
 and "all f xs" tests whether "f" returns True for *every* element of "xs".
 
 > won :: Board -> Player -> Bool
-> won b x = undefined
+> won b x = any (all (playerAt b x)) winLines
 
 *****************
 * END PROBLEM 3 *
