@@ -1,0 +1,62 @@
+CS457/557 Functional Programming Winter 2020
+Katie Casamento, Portland State University
+Homework 2
+
+Due before lecture (2pm) on Tuesday, January 28.
+
+
+1. ABOUT THIS PROJECT FOLDER
+
+The folder containing this file is a Cabal project and also a Stack project.
+
+If you're using Cabal, use the same commands as last time: initialize with
+  cabal update && cabal install --dependencies-only --enable-tests
+and then run the interpreter with "cabal repl" and test with "cabal test".
+
+If you're using Stack, you don't need to initialize anything; run the
+interpreter with "stack ghci" and test with "stack test".
+
+
+Let me know if you have any build issues!
+
+
+2. ABOUT THIS HOMEWORK
+
+In this assignment you'll be working with the Semigroup typeclass, which is one
+of the standard classes defined in the Prelude. The last question is a short
+answer question: you don't need to provide a formal proof, but try to give a
+good argument!
+
+
+3. ABOUT SEMIGROUPS (optional aside)
+
+The name "semigroup" comes from abstract algebra, but it represents a common
+code pattern: a type T "is a semigroup" if we can combine a nonempty ordered
+collection of elements of type T with divide-and-conquer recursion, with the
+guarantee that we'll get the same result no matter how we divide up the problem
+as long as we respect the ordering of the collection. This basically captures
+the "reduce" part of the "map-reduce" paradigm, along with more pedestrian
+tasks like computing the total sum of a nonempty list or finding the leftmost
+value constructed with Just in a nonempty tree of Maybe values.
+
+The Monoid typeclass, also standard in the Prelude, represents types that are
+instances of Semigroup along with a "unit" value called "mempty" ("monoid
+empty"), with the requirement that inserting "mempty" into a collection never
+affects the result of reducing the collection down to a single value. This
+extends the notion of "reducing" to be able to handle empty collections as
+well as nonempty collections, which generalizes the "fold" operations that
+we've been using on lists. Since empty collections are fairly pervasive in
+programming, we tend to use Monoid constraints more often than Semigroup
+constraints in Haskell, but when we use Monoid we also implicitly use
+Semigroup, since Semigroup is a superclass of Monoid.
+
+The Maybe type can be seen as extending a semigroup to a monoid by adding an
+"empty" value to a type, and the list type is a "free monoid": in a certain
+well-defined sense, the list type is the "least" amount of structure that we
+can add to some arbitrary (unconstrained) element type in order to obtain a
+type that can be given a lawful instance of the Monoid typeclass. All free
+monoids in a given setting (category) are isomorphic, so we often say the list
+type is "the" free monoid: it's logically equivalent to any other type with the
+same properties, although it might have different performance characteristics.
+Many typeclasses with laws have straightforward "free" types: the BinTree type
+from this assignment is a free semigroup type, up to Eq.
