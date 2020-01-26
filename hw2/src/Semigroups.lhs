@@ -336,6 +336,7 @@ You may modify the existing definition code for sconcat to add parameters and
 cases.
 
 > sconcat :: Semigroup a => BinTree a -> a
+> sconcat (Node x r) = sconcat x <> sconcat r
 > sconcat (Leaf x) = x
 
 *****************
