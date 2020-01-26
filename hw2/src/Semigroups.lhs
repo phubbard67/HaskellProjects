@@ -285,7 +285,10 @@ Do not modify the Semigroup instance for BinTree above.
 (Also, don't worry about efficiency.)
 
 > instance Eq a => Eq (BinTree a) where
->   t1 == t2 = \ -> \x -> leafAt x t1 == leafAt x t2 
+>  Leaf x == Leaf y = x == y
+>  Leaf x == Node r y = False
+>  Node r y == Leaf x = False
+>  Node l x == Node r y = l == r && x == y
 
 *****************
 * END PROBLEM 2 *
@@ -333,7 +336,7 @@ You may modify the existing definition code for sconcat to add parameters and
 cases.
 
 > sconcat :: Semigroup a => BinTree a -> a
-> sconcat = undefined
+> sconcat (Leaf x) = x
 
 *****************
 * END PROBLEM 3 *
