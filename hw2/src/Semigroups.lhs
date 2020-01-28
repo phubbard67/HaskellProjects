@@ -393,7 +393,12 @@ If you want to reference an image, submit the image along with this file on D2L
 in a standard format and reference it by filename.
 
 Write your answer in the space below this text.
-
+  Yes, because the sconcat is always going to give us an in order list of 
+  our leaves. It goes to the left most leaf (the smallest value) to the right most
+  in a recursive fashion. A balanced tree is just that; an in order tree. So, if we 
+  sconcat an in order tree, or sconcat another tree, the list should be in order in 
+  both cases. It's either that, or I don't really know what I'm talking about, and just
+  trying to make the best guess I can. ¯\_(ツ)_/¯
 
 *****************
 * END PROBLEM 4 *
