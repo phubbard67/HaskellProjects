@@ -1,0 +1,39 @@
+name: hw3
+version: 1.0.0.0
+synopsis: CS457/557 Winter 2020 Homework 3
+license: BSD3
+license-file: LICENSE
+author: Katie Casamento
+maintainer: cas28@pdx.edu
+copyright: Katie Casamento
+category: Web
+build-type: Simple
+cabal-version: >=1.10
+extra-source-files: README
+
+library
+  exposed-modules: Monoids
+  hs-source-dirs: src
+  default-language: Haskell2010
+  build-depends: base >= 4.9 && < 5, containers, random
+  ghc-options: -fwarn-incomplete-patterns -fwarn-incomplete-uni-patterns
+  default-extensions:
+    DeriveGeneric ExplicitForAll FlexibleInstances GeneralizedNewtypeDeriving
+    ScopedTypeVariables
+
+executable talk
+  main-is: src/Main.hs
+  default-language: Haskell2010
+  build-depends: base >= 4.9 && <5, hw3, containers, random
+  ghc-options: -fwarn-incomplete-patterns -fwarn-incomplete-uni-patterns
+  default-extensions: ViewPatterns
+
+test-suite spec
+  type: exitcode-stdio-1.0
+  default-language: Haskell2010
+  hs-source-dirs: test
+  ghc-options: -fwarn-incomplete-patterns -fwarn-incomplete-uni-patterns
+  other-modules: MonoidSpec
+  main-is: Spec.hs
+  default-extensions: AllowAmbiguousTypes ScopedTypeVariables TypeApplications
+  build-depends: base >=4.9 && <5, hw3, containers, generic-arbitrary, hspec, QuickCheck

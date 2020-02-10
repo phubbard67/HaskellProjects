@@ -1,0 +1,42 @@
+CS457/557 Functional Programming Winter 2020
+Katie Casamento, Portland State University
+Homework 3
+
+Due before lecture (2pm) on Tuesday, February 11.
+
+
+
+1. ABOUT THIS PROJECT FOLDER
+
+The folder containing this file is a Cabal project and also a Stack project.
+
+If you're using Cabal, use the same commands as last time: initialize with
+  cabal update && cabal install --dependencies-only --enable-tests
+and then run the interpreter with "cabal repl" and test with "cabal test".
+
+If you're using Stack, you don't need to initialize anything; run the
+interpreter with "stack ghci" and test with "stack test".
+
+
+Let me know if you have any build issues!
+
+
+2. ABOUT THIS HOMEWORK
+
+This assignment builds on homework 2 to have you work with the Monoid
+typeclass, which is an extension to the Semigroup typeclass. You'll be doing a
+couple abstract typeclass instance definitions like in homework 2, and then see
+how the Monoid pattern applies to a couple (arguably) interesting scenarios
+with (arguably) realistic data types.
+
+
+3. GENERATING TEXT
+
+Once you've completed the last problem, you can run the main method in this
+project to generate text based on a frequency distribution built up from an
+input file. There are some public domain input files provided in the "texts"
+folder that you can use as sample inputs. Run the program with either Cabal or
+Stack: the first argument is the path to the text file to train on, and the second argument is the maximum number of words to output.
+
+  cabal run talk texts/ecma.txt 100
+  stack exec talk texts/style.txt 100
