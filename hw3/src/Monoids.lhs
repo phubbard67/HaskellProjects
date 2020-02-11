@@ -337,10 +337,13 @@ You may modify the definition of (<>) to add cases.
 Do not change the constraints on either instance.
 
 > instance (Semigroup e, Semigroup a) => Semigroup (Result e a) where
->   e <> a = 
+>   Error e <> Error a =  Error (a <> e)
+>   Ok e <> Ok a = Ok (e <> a)
+>   Error e <> Ok a = Error e
+>   Ok a <> Error e = Error e
 >
 > instance (Semigroup e, Monoid a) => Monoid (Result e a) where
->   mempty = undefined
+>   mempty = Ok mempty
 
 *****************
 * END PROBLEM 3 *
@@ -550,7 +553,7 @@ file, but you may not change any of the definition of "train" except for the
 "undefined" part.
 
 > train :: String -> FreqMap String
-> train = mconcat . undefined . lines
+> train = mconcat . map bigramFreqMap . map words . lines
 
 *************
 * PROBLEM 4 *

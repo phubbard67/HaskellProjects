@@ -30,7 +30,7 @@ version = Version [1,0,0,0] []
 bindir, libdir, dynlibdir, datadir, libexecdir, sysconfdir :: FilePath
 
 bindir     = "/home/phubbard/Desktop/Winter_2020/CS457/HaskellProjects/hw3/.stack-work/install/x86_64-linux/661caf7e7e3d4fc8d8dec2945718df0a590690b048f0ba3e79d34ff0aa821fa5/8.6.5/bin"
-libdir     = "/home/phubbard/Desktop/Winter_2020/CS457/HaskellProjects/hw3/.stack-work/install/x86_64-linux/661caf7e7e3d4fc8d8dec2945718df0a590690b048f0ba3e79d34ff0aa821fa5/8.6.5/lib/x86_64-linux-ghc-8.6.5/hw3-1.0.0.0-IIdWab7NWKiEfNnZxdyrPm-talk"
+libdir     = "/home/phubbard/Desktop/Winter_2020/CS457/HaskellProjects/hw3/.stack-work/install/x86_64-linux/661caf7e7e3d4fc8d8dec2945718df0a590690b048f0ba3e79d34ff0aa821fa5/8.6.5/lib/x86_64-linux-ghc-8.6.5/hw3-1.0.0.0-8lAmHykqCYi8h0WZuPlUY1-talk"
 dynlibdir  = "/home/phubbard/Desktop/Winter_2020/CS457/HaskellProjects/hw3/.stack-work/install/x86_64-linux/661caf7e7e3d4fc8d8dec2945718df0a590690b048f0ba3e79d34ff0aa821fa5/8.6.5/lib/x86_64-linux-ghc-8.6.5"
 datadir    = "/home/phubbard/Desktop/Winter_2020/CS457/HaskellProjects/hw3/.stack-work/install/x86_64-linux/661caf7e7e3d4fc8d8dec2945718df0a590690b048f0ba3e79d34ff0aa821fa5/8.6.5/share/x86_64-linux-ghc-8.6.5/hw3-1.0.0.0"
 libexecdir = "/home/phubbard/Desktop/Winter_2020/CS457/HaskellProjects/hw3/.stack-work/install/x86_64-linux/661caf7e7e3d4fc8d8dec2945718df0a590690b048f0ba3e79d34ff0aa821fa5/8.6.5/libexec/x86_64-linux-ghc-8.6.5/hw3-1.0.0.0"
