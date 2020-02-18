@@ -190,7 +190,8 @@ instance, and the right "foldMap" is from the list type ("[]") instance.
 
 > instance Foldable NonEmpty where
 >   foldMap :: Monoid b => (a -> b) -> NonEmpty a -> b
->   foldMap = undefined
+>   foldMap f = foldMap f . foldMap (\x -> [x])
+
 
 *****************
 * END PROBLEM 1 *
@@ -724,3 +725,8 @@ use "toList" in your answer, it might be useful for experimenting in GHCi!
 *****************
 * END PROBLEM 4 *
 *****************
+
+
+from class: use concat function defined in this file to help with number 4
+            and there are enough predefined function to help you. Her solution was three functions 
+            seperated by dots for number 4. 
