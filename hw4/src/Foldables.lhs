@@ -190,7 +190,7 @@ instance, and the right "foldMap" is from the list type ("[]") instance.
 
 > instance Foldable NonEmpty where
 >   foldMap :: Monoid b => (a -> b) -> NonEmpty a -> b
->   foldMap f= mconcat . fmap f . mempty
+>   foldMap f (x :| xs) = mempty
 
 *****************
 * END PROBLEM 1 *
