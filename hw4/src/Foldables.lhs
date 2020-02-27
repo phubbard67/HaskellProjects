@@ -261,7 +261,7 @@ a.
 Specification:
 
   lengthSpec :: (Foldable f, Num b) => f a -> b
-  lengthSpec = listLength . toList
+  lengthSpec =  listLength . toList
     where
       listLength :: Num b => [a] -> b
       listLength [] = 0
@@ -270,8 +270,10 @@ Specification:
 Problem:
 
 > length :: (Foldable f, Num b) => f a -> b
-> length = undefined
+> length = undefined 
 
+
+f is of type f a
 
 b.
 
@@ -287,7 +289,7 @@ Specification:
 Problem:
 
 > findCount :: (Foldable f, Num b) => (a -> Bool) -> f a -> b
-> findCount = undefined
+> findCount f = undefined
 
 *****************
 * END PROBLEM 2 *
