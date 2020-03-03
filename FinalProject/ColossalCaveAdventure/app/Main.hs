@@ -23,7 +23,7 @@ gameMap = [("road", (1, 2)),("river", (0, 2)), ("house", (0, 1))]
 -- This command processes the user input and returns the next location
 processCommand :: String -> String
 processCommand a = if a == "help" then helpString 
-                    else if a == "road" then ("You are next to a " ++ (fst (gameMap !! (fst (snd (gameMap !! 0))))))
+                    else if a == "road" then ("You are next to a " ++ (fst (gameMap !! (fst (snd (gameMap !! 0))))) ++ " and a " ++ (fst (gameMap !! (snd (snd (gameMap !! 0))))))
                     else "Sorry, that command is not recognized"
 
 
@@ -47,6 +47,8 @@ helpString = "I know of places, actions, and things.  Most of my vocabulary desc
 \Also, note that cave passages turn a lot, and that leaving a room to\n\
 \the north does not guarantee entering the next from the south.  Good luck!"
 
+
+-- This is just the intro string that is partially from https://www.amc.com/shows/halt-and-catch-fire/exclusives/colossal-cave-adventure
 gameIntro = "              Welcome to Colossal Haskell Adventure\n\
             \     Based on Colossal Cave Adventure created by Will Crowther\n\n\
             \To play the game, type short phrases into the command line below.\n\ 
