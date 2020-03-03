@@ -1,7 +1,5 @@
 module Main where
 
-import Data.Graph
-
 main :: IO ()
 main =  do
         clear
