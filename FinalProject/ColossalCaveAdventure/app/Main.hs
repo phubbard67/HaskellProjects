@@ -3,23 +3,15 @@ module Main where
 main :: IO ()
 main =  do
         clear
-        putStrLn "              Welcome to Colossal Haskell Adventure"
-        putStrLn "   Based on Colossal Cave Adventure created by Will Crowther"
-        putStrLn ""
-        putStrLn "To play the game, type short phrases into the command line below.\n\ 
-                    \If you type the word 'look,' the game gives you a description of your surroundings.\n\
-                    \Typing 'inventory' tells you what you're carrying.\n\
-                    \'Get' 'drop' and 'throw' helps you interact with objects.\n\
-                    \Part of the game is trying out different commands and seeing what happens.\n\
-                    \Type 'help' at any time for game instructions.\n\n\
-                    \Would you like more instructions?"
+        putStrLn gameIntro
         response <- getLine
         putStrLn (processCommand response)
         
-
+-- clears the terminal
 clear = putStr "\ESC[2J"
 
 -- TODO: Maybe turn the game map into a type
+-- this is the map for the game
 gameMap = [("road", (1, 2)),("river", (0, 2)), ("house", (0, 1))]
 
 -- TODO: Change this so it takes in the game map position
@@ -28,13 +20,14 @@ gameMap = [("road", (1, 2)),("river", (0, 2)), ("house", (0, 1))]
 --        that gets passed in, and then you can reference the game map
 --        based on this value. Where it says gameMap !! 0 it will read
 --        gameMap !! mapPos
+-- This command processes the user input and returns the next location
 processCommand :: String -> String
 processCommand a = if a == "help" then helpString 
                     else if a == "road" then ("You are next to a " ++ (fst (gameMap !! (fst (snd (gameMap !! 0))))))
                     else "Sorry, that command is not recognized"
 
 
-
+-- This is just the string for help that is from https://www.amc.com/shows/halt-and-catch-fire/exclusives/colossal-cave-adventure
 helpString = "I know of places, actions, and things.  Most of my vocabulary describes\n\
 \places and is used to move you there.  To move, try words like forest,\n\
 \building, downstream, enter, east, west, north, south, up or down.\n\
@@ -53,3 +46,13 @@ helpString = "I know of places, actions, and things.  Most of my vocabulary desc
 \the building from anywhere above ground except when lost in the forest.\n\
 \Also, note that cave passages turn a lot, and that leaving a room to\n\
 \the north does not guarantee entering the next from the south.  Good luck!"
+
+gameIntro = "              Welcome to Colossal Haskell Adventure\n\
+            \     Based on Colossal Cave Adventure created by Will Crowther\n\n\
+            \To play the game, type short phrases into the command line below.\n\ 
+            \If you type the word 'look,' the game gives you a description of your surroundings.\n\
+            \Typing 'inventory' tells you what you're carrying.\n\
+            \'Get' 'drop' and 'throw' helps you interact with objects.\n\
+            \Part of the game is trying out different commands and seeing what happens.\n\
+            \Type 'help' at any time for game instructions.\n\n\
+            \Would you like more instructions?"
