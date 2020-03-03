@@ -1,5 +1,9 @@
 module Main where
 
+-- TODO: Make this a recursing loop. There is an example of how 
+--       to do so in the IO section of learn you a haskell
+--       you should also be passing in the gameMap location
+--       to processCommand, and updating it each turn
 main :: IO ()
 main =  do
         clear
