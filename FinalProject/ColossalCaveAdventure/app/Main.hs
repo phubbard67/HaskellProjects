@@ -19,8 +19,15 @@ main =  do
 
 clear = putStr "\ESC[2J"
 
+-- TODO: Maybe turn the game map into a type
 gameMap = [("road", (1, 2)),("river", (0, 2)), ("house", (0, 1))]
 
+-- TODO: Change this so it takes in the game map position
+--        so that you can track where the user is in the game
+--        the main loop should hold an updated list position var
+--        that gets passed in, and then you can reference the game map
+--        based on this value. Where it says gameMap !! 0 it will read
+--        gameMap !! mapPos
 processCommand :: String -> String
 processCommand a = if a == "help" then helpString 
                     else if a == "road" then ("You are next to a " ++ (fst (gameMap !! (fst (snd (gameMap !! 0))))))
