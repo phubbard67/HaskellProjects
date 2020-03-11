@@ -47,7 +47,7 @@ processCommand (a , c, b)
                         | otherwise = (("Sorry, that command is not recognized" , "none") , (-1, -1))
 
                                         
--- TODO: fix this. You keep seeing that the wrong left and right location is being shown
+-- TODO: return if the player has the winning string
 game :: IO()
 game = do
         when (response /= "quit")
@@ -56,7 +56,7 @@ game = do
                         putStrLn (fst ( fst (location)))
                         let inventory = (snd (fst (location))) 
                         response <- getLine
-                        let nextPos = (getNextLocation (response ,  playerPos)) --try two --here is where it starts going wrong
+                        let nextPos = (getNextLocation (response ,  playerPos)) --try two 
                         let nextLoc = (processCommand ("no" , searchInv inventory, nextPos))
                         putStrLn (fst ( fst (nextLoc)))
                         let inventoryOne = inventory ++ (snd (fst (nextLoc))) 
