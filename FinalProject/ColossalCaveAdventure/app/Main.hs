@@ -64,7 +64,7 @@ main =  do
 clear = putStr "\ESC[2J"
 
 -- this is the map for the game
-gameMap = [ (("road that seems to stretch on forever", "none") , (1, 4)) , (("river with salmon that smile at you", "none") , (2, 0)) , (("sad looking house", "key") , (4, 1)), (("cave (probably the one with gold)", "door") , (1, 0)) , (("valley that makes you re-think your life choices", "none") , (0, 5)) , (("liquor store for dragons", "none") , (3, 6)) , (("big and tall robe store for plus size wizards", "none") , (5, 1))]
+gameMap = [ (("road that seems to stretch on forever", "none") , (1, 4)) , (("river with salmon that smile at you", "none") , (2, 0)) , (("sad looking house", "key") , (4, 1)), (("cave (probably the one with gold)", "door") , (1, 0)) , (("valley that makes you re-think your life choices", "none") , (0, 5)) , (("liquor store for dragons", "none") , (3, 6)) , (("big and tall robe store for plus size wizards", "none") , (5, 7)), (("Betty White secret fight club night club", "none") , (6, 8)) , (("mullet festival", "none") , (6, 4))]
 
 
 -- This command processes the user input and returns the next location
@@ -72,7 +72,7 @@ processCommand :: (String , Maybe Int, Int, String) -> ((String , String) , (Int
 processCommand (a , c, b, d) 
                         | (map toUpper a) == "HELP" = ((helpString , "none") , (-1, -1))
                         | (map toUpper a) == "INVENTORY" = ((getInv d, "none"), (-1, -1))
-                        | a == "location" = ((("You are at the " ++ getCurrLoc (b) ++ "\nand next to you is a " ++ getMapLeft (b) ++ "\nand a " ++ getMapRight(b)), getMapItem(b)) , (getMapLeftLoc(b), getMapRightLoc(b)))
+                        | (map toUpper a) == "LOCATION" = ((("You are at the " ++ getCurrLoc (b) ++ "\nand next to you is a " ++ getMapLeft (b) ++ "\nand a " ++ getMapRight(b)), getMapItem(b)) , (getMapLeftLoc(b), getMapRightLoc(b)))
                         | b == -2 = (("Sorry, that command is not recognized -2" , "none") , (-1, -1))
                         | isInputValid (a, b) = if getMapItem (b) == "none" then ((("You are at the " ++ getCurrLoc (b) ++ "\nand next to you is a " ++ getMapLeft (b) ++ "\nand a " ++ getMapRight(b)) , getMapItem(b)) , (getMapLeftLoc(b), getMapRightLoc(b)))
                                         else if getMapItem(b) == "key" then ((("You are next to a " ++ getMapLeft (b) ++ "\nand a " ++ getMapRight(b) ++ "\nand you have found a " ++ getMapItem(b) ++ " in the house.") , getMapItem(b)) , (getMapLeftLoc(b), getMapRightLoc(b)))
@@ -148,7 +148,7 @@ isInputValid (a, b) | (map toUpper a) == "LEFT" = True
                     | otherwise = False
 
 
--- Test to see that the maze is solvable
+-- Test to see that the maze is solvable and game has an end state. 
 -- $ stack run
 -- press 'enter' key
 -- $ left
@@ -161,3 +161,25 @@ isInputValid (a, b) | (map toUpper a) == "LEFT" = True
 -- press 'enter' key
 -- $ quit
 
+-- test each command
+-- stack run
+-- $ enter
+-- $ inventory
+-- $ help
+-- $ location
+-- $ left
+-- $ right
+-- $ east
+-- $ west
+-- $ quit
+-- $ quit
+
+-- Test that inventory updates
+-- stack run
+-- hit 'enter' key
+-- $ inventory
+-- $ left
+-- $ left
+-- $ inventory
+-- $ quit
+-- $ quit
