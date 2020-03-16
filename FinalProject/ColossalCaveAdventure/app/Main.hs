@@ -26,7 +26,7 @@ helpString = "To move, try words like left, right, east and west.\n\
 gameIntro = "              Welcome to Not So Colossal Haskell Adventure\n\
             \     Based slightly on Colossal Cave Adventure created by Will Crowther\n\n\
             \To play the game, type short phrases into the command line below.\n\ 
-            \If you type the word 'quit,' during the game you can get back to this menu.\n\
+            \If you type the word 'quit' during the game you can get back to this menu.\n\
             \Typing 'inventory' tells you what you're carrying.\n\
             \Typing 'location' tells you where you are currently.\n\
             \Part of the game is trying out different commands and seeing what happens.\n\
