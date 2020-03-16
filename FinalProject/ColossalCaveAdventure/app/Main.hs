@@ -183,3 +183,8 @@ isInputValid (a, b) | (map toUpper a) == "LEFT" = True
 -- $ inventory
 -- $ quit
 -- $ quit
+
+-- Test that you need the key to win
+-- stack run
+-- hit 'enter' key
+-- 
