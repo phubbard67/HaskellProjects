@@ -10,8 +10,8 @@ To build the project, navagate to the ColossalCaveAdventure folder and run `stac
 To run the project, navagate to the ColossalCaveAdventure folder and run `stack run`
 ## Written tests
 ### Test to see that the maze is solvable and game has an end state. 
--- $ stack run
--- press 'enter' key
+<br>-- $ stack run
+<br>-- press 'enter' key
 -- $ left
 -- $ left
 -- $ left
