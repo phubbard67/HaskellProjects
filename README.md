@@ -10,7 +10,7 @@ To build the project, navagate to the ColossalCaveAdventure folder and run `stac
 To run the project, navagate to the ColossalCaveAdventure folder and run `stack run`
 ## Written tests
 ### Test to see that the maze is solvable and game has an end state. 
-<br>-- $ stack run
+-- $ stack run
 <br>-- press 'enter' key
 <br>-- $ left
 <br>-- $ left
@@ -21,7 +21,7 @@ To run the project, navagate to the ColossalCaveAdventure folder and run `stack 
 <br>-- $ quit
 
 ### Test each command
-<br>-- stack run
+-- stack run
 <br>-- $ enter
 <br>-- $ inventory
 <br>-- $ help
@@ -34,7 +34,7 @@ To run the project, navagate to the ColossalCaveAdventure folder and run `stack 
 <br>-- $ quit
 
 ### Test that inventory updates
-<br>-- stack run
+-- stack run
 <br>-- hit 'enter' key
 <br>-- $ inventory
 <br>-- $ left
@@ -44,7 +44,7 @@ To run the project, navagate to the ColossalCaveAdventure folder and run `stack 
 <br>-- $ quit
 
 ### Test that you need the key to win
-<br>-- stack run
+-- stack run
 <br>-- hit 'enter' key
 <br>-- $ right 
 <br>-- $ right 
